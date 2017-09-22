@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="wilih=device-wilih initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
+<title>江西卫生职业学院</title>
+<link href="template/cms/yunlian/css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="template/cms/yunlian/js/jquery.min.js"></script>
+<script type="text/javascript" src="template/cms/yunlian/js/jquery.slider.min.js"></script>
+	
+<script type="text/javascript">
+	    	var rows = 5;//每页显示记录数
+	    	var page = 1;//当前页
+	    	var total = 0;//总记录数
+	    	var field = "id,title,columnId,summary,createDate,imageName,imageHref,accountid,content,";//字段
+	    	var sort = "newstime";
+	    	var order = "desc";
+	    	$(function(){
+	    			loadDatanewsList("schoolNews");	//校园新闻信息
+	    			loadDatanewsListtzgg("notice");//通知公告
+	    			loadDatanewsListtzbmdt("dynamic");//部门动态
+		    });
+	    	//校园新闻
+		    function loadDatanewsList(coloumnid){
+				if ($("#j-viewmore").hasClass("disabled")) {
+					return;
+				}
+				$("#j-viewmore").html("努力加载中…").addClass("disabled");
+	    		$.ajax({
+	                type: "GET",
+	                url: "cmsController.do?getArticleList",
+	                data: {columnid:coloumnid,rows:rows,page:page},
+	                dataType: "json",
+	                success: function(data){
+	                	var mapValue = eval("("+data+")");
+	                	var value = mapValue.list;
+	                	for (var i=0; i<value.length; i++)
+	    				{
+                       		setData(value[i]);
+	    				}
+	           		}
+	    		});
+			}
+	    	
+	    	function loadDatanewsListtzgg(coloumnid)
+	    	{
+	    		if ($("#j-viewmore").hasClass("disabled")) {
+					return;
+				}
+				$("#j-viewmore").html("努力加载中…").addClass("disabled");
+	    		$.ajax({
+	                type: "GET",
+	                url: "cmsController.do?getArticleList",
+	                data: {columnid:coloumnid,rows:rows,page:page},
+	                dataType: "json",
+	                success: function(data){
+	                	var mapValue = eval("("+data+")");
+	                	var value = mapValue.list;
+	                	for (var i=0; i<value.length; i++)
+	    				{
+                        	var html='<div class="noticeList"><div class="noticeTime"><h1>'+formatCSTDateDate(value[i].update_time)+'</h1><p>'+formatCSTDate(value[i].update_time)+'</p></div><div class="noticeCont"><a href="cmsController.do?goArticle&menu=notice&articleid='+value[i].id+'"><h1>'+sbstringtexttitle(value[i].title,12)+'</h1></a><p>'+sbstringtextcontent(value[i].summary, 24)+'</p></div></div>';
+                        	$("#noticeBox").append(html);
+	    				}
+	           		}
+	    		});
+	    	}
+	    	function loadDatanewsListtzbmdt(coloumnid)
+	    	{
+	    		if ($("#j-viewmore").hasClass("disabled")) {
+					return;
+				}
+				$("#j-viewmore").html("努力加载中…").addClass("disabled");
+	    		$.ajax({
+	                type: "GET",
+	                url: "cmsController.do?getArticleList",
+	                data: {columnid:coloumnid,rows:rows,page:page},
+	                dataType: "json",
+	                success: function(data){
+	                	var mapValue = eval("("+data+")");
+	                	var value = mapValue.list;
+	                	for (var i=0; i<value.length; i++)
+	    				{
+                            for(var i = 0; i < value.length; i++){
+                            	var html='<li><h1>'+sbstringtexttitle(value[i].title,15)+'</h1><p>'+sbstringtextcontent(value[i].summary, 15)+'<a href="cmsController.do?goArticle&menu=dynamic&articleid='+value[i].id+'">[详细]</a></p></li>';
+                            	$("#dynamicList").append(html);	
+                            }
+	    				}
+	           		}
+	    		});
+	    	}
+	    	//标题截取
+	    	function sbstringtexttitle(text, num)
+	    	{
+	    		if(getStringLength(text)>num*2)		
+	    		{
+	    			text=text.substring(0,num)+"...";
+	    		}
+	    		return text;
+	    	}
+	    	//内容截取
+	     	function sbstringtextcontent(text, num)
+	    	{
+	    		text = text.replace(/<[^>]+>/g,"");
+	    		
+	    		if(getStringLength(text)>num*2)		
+	    		{
+	    			text=text.substring(0,num)+"...";
+	    		}
+	    		return text;
+	    	}
+	    	// 统计字符数量，汉字为2，数字为1
+	    	function getStringLength(str)
+	    	{
+				var realLength = 0, len = str.length, charCode = -1;
+				for (var i = 0; i < len; i++) {
+					charCode = str.charCodeAt(i);
+					if (charCode >= 0 && charCode <= 128) 
+					   realLength += 1;
+					else
+					   realLength += 2;
+				}
+				return realLength;
+	    	}
+			//数据填充展示
+			function setData(article)
+			{
+				var html = "";
+				html='<li><strong>></strong><a href="cmsController.do?goArticle&menu=schoolNews&articleid='+article.id+'">'+sbstringtexttitle(article.title,15)+'</a></li>';
+				$("#newsList").append(html);
+			}
+			//格式化CST日期的字串
+		   function formatCSTDate(strDate){
+		        return formatDate(new Date(strDate*1000),"yyyy-MM");
+		      }
+		   function formatCSTDateDate(strDate){
+		        return formatDate(new Date(strDate*1000),"dd");
+		      }
+			//格式化日期,
+ 		   function formatDate(date,format){
+		        var paddNum = function(num){
+		          num += "";
+		          return num.replace(/^(\d)$/,"0$1");
+		        }
+		        //指定格式字符
+		        var cfg = {
+		           yyyy : date.getFullYear() //年 : 4位
+		          ,yy : date.getFullYear().toString().substring(2)//年 : 2位
+		          ,M  : date.getMonth() + 1  //月 : 如果1位的时候不补0
+		          ,MM : paddNum(date.getMonth() + 1) //月 : 如果1位的时候补0
+		          ,d  : date.getDate()   //日 : 如果1位的时候不补0
+		          ,dd : paddNum(date.getDate())//日 : 如果1位的时候补0
+		          ,hh : date.getHours()  //时
+		          ,mm : date.getMinutes() //分
+		          ,ss : date.getSeconds() //秒
+		        }
+		        format || (format = "yyyy-MM-dd hh:mm:ss");
+		        return format.replace(/([a-z])(\1)*/ig,function(m){return cfg[m];});
+   	 	} 
+</script>
+</head>
+
+<body>
+	<div class="header">
+		<center>
+			<img src="template/cms/yunlian/images/logo.png" />
+		</center>
+	</div>
+	<div class="wrap">
+		<ul class="slider">
+<!-- 			<#list cmsData.adList as poVal>
+			<li class="items"><a href="#"><img src="${poVal.imageHref}"alt="${poVal.title}"></a></li> 
+			</#list> -->
+			<li class="items"><a href="#"><img src="upload/files/1.jpg"alt="美丽校园"></a></li>
+			<li class="items"><a href="#"><img src="upload/files/2.jpg"alt="学生风采"></a></li>
+		</ul>
+	</div>
+	<div class="icon">
+		<ul>
+<!--			<li><a href="cmsController.do?goMenu&menu=schoolNews"><img src="upload/files/tb1.png" /><br />学院新闻</a></li>
+			<li><a href="cmsController.do?goMenu&menu=notice"><img src="upload/files/tb2.png" /><br />通知公告</a></li> 
+			<li><a href="cmsController.do?goMenu&menu=dynamic"><img src="upload/files/tb3.png" /><br />部门动态</a></li> -->
+<!--
+		<#list cmsData.menuList as menu>
+			<li><a href="cmsController.do?goPage&page=menu&id=${menu.id}"><img src="${menu.imageHref}" /><br />${menu.name}</a></li> 
+		</#list>
+  -->
+		<#if cmsData.isLanded?? && cmsData.isLanded == "isLanded">
+			<li><a href="weixinLinksucaiController.do?link&id=4028811c5b5f92ed015b5f9bf24b0010"><img src="upload/files/wdts.png" /><br />我的图书</a></li>
+			<li><a href="weixinLinksucaiController.do?link&id=4028811c5b5f92ed015b5f9db1230016"><img src="upload/files/kbcx.png" /><br />课表查询</a></li>
+			<#if cmsData.isTEA == "TEA">
+			<li><a href="weixinLinksucaiController.do?link&id=4028e4b05d9ce184015da067530e000d"><img src="upload/files/gzcx.png" /><br />工资查询</a></li>
+			<li><a href="weixinLinksucaiController.do?link&id=4028e4b05d9ce184015da06a49eb0010"><img src="upload/files/OAdb.png" /><br />OA待办</a></li>
+			</#if>
+			<li><a href="weixinLinksucaiController.do?link&id=4028811c5b5f92ed015b5f9e44700019"><img src="upload/files/onecard.png" /><br />一卡通</a></li>
+			<#if cmsData.isTEA == "STU">
+			<li><a href="weixinLinksucaiController.do?link&id=4028811c5b5f92ed015b5f994ac8000c"><img src="upload/files/skqd.png" /><br />上课签到</a></li>
+			<li><a href="weixinLinksucaiController.do?link&id=4028e4b05d9ce184015da06c8bed0012"><img src="upload/files/cjcx.png" /><br />成绩查询</a></li>
+			</#if>
+			<li><a href="weixinLinksucaiController.do?link&id=4028811c5b5f92ed015b5f9efe64001b"><img src="upload/files/xgdb.png" /><br />学工待办</a></li>
+			<li><a href="weixinLinksucaiController.do?link&id=4028e4b05bfac38a015c0ad560130041"><img src="upload/files/rcgl.png" /><br />日程管理</a></li>
+			<li><a href="http://cn.mikecrm.com/xnjKtS"><img src="upload/files/bxsq.png" /><br />报修申请</a></li>
+			<li><a href="http://cn.mikecrm.com/M71oH7y"><img src="upload/files/dmtbx.png" /><br />多媒体报修</a></li>
+		</#if>
+			<li id="bind"><a href="weixinLinksucaiController.do?link&id=4028e4b05c867724015c8a643f1c0002"><img src="upload/files/userbind.png" /><br />用户绑定</a></li>
+		</ul>
+	</div>
+	<div class="view">
+		<div class="titles news">
+			<span><a href="cmsController.do?goMenu&menu=schoolNews">更多></a>
+			</span>
+			<h1>学院新闻</h1>
+		</div>
+		<div class="newsList" >
+			<ul id="newsList">
+				
+			</ul>
+		</div>
+		<div class="titles notice">
+			<span><a href="cmsController.do?goMenu&menu=notice">更多></a></span>
+			<h1>通知公告</h1>
+		</div>
+		<div class="noticeBox" id="noticeBox">
+		</div>
+		<div class="titles dynamic">
+			<span><a href="cmsController.do?goMenu&menu=dynamic">更多></a></span>
+			<h1>部门动态</h1>
+		</div>
+		<div class="dynamicList" >
+			<ul id="dynamicList">
+				
+			</ul>
+		</div>
+	</div>
+	<div class="footer">
+		<p>江西省南昌市小蓝经济开发区汇仁大道689号</p>
+		<p>（汇仁大道与金沙大道交汇处）</p>
+		<p>邮编：330052 联系电话：0791-85772112</p>
+		<p>Copyright@2017 赣ICP备0971111号</p>
+	</div>
+</body>
+</html>

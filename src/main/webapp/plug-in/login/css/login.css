@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+*{ padding:0px; margin:0px;}
+html{ _background:url(about:blank);}
+body{ font-size:14px; font-family:"Microsoft YaHei"; background:#06061b; min-width:1000px;}
+img{ border:0px;}
+li{ list-style:none;}
+input{ outline:none; font-family:"Microsoft YaHei"; -webkit-tap-highlight-color:rgba(255,0,0,0);}
+a,a:hover{ color:#fff; text-decoration:none;}
+
+.global{ width:100%; position:absolute; display:block; vertical-align:middle; background:#06061b url(../images/mainBg.png) no-repeat center -50px;}
+.logo{ width:1000px; height:72px; margin:0px auto;}
+.logo strong{ float:right; font-size:18px; color:#015dab; line-height:72px;}
+.main{ width:100%; height:460px;}
+
+.user{ width:1000px; height:460px; margin:0px auto;}
+.login{ float:right; width:400px; height:420px; margin:20px 0px;}
+.titles{ width:400px; height:32px; background:url(../images/titleBg.png) no-repeat; margin:20px 0px;}
+.box{ width:330px; height:280px; background:#fff; border-radius:5px; padding:20px 35px;}
+.box h1{ font-size:18px; font-weight:normal;}
+.line{ width:328px; height:150px; margin-top:10px; border:1px solid #ddd; border-bottom:0px;}
+.line span{ line-height:25px;}
+.inp1{ width:282px; height:25px; padding:12px 0px 12px 46px; background:#fff url(../images/tb1.gif) no-repeat 10px center; border-bottom:1px solid #ddd;}
+.inp2{ width:282px; height:25px; padding:12px 0px 12px 46px; background:#fff url(../images/tb2.gif) no-repeat 11px center; border-bottom:1px solid #ddd;}
+.txt{ width:282px; height:25px; border:0px; line-height:25px;}
+.inp3{ width:282px; height:31px; padding:9px 0px 9px 46px; background:#fff url(../images/tb3.gif) no-repeat 10px center; border-bottom:1px solid #ddd;}
+.num{ float:left; width:156px; height:25px; line-height:25px; padding:3px 0px;}
+.rand{ width:156px; height:25px; border:0px; line-height:25px;}
+.code{ float:right; width:106px; height:31px; margin-right:10px;}
+
+.btn{ width:328px; height:36px; margin-top:25px; text-align:left;}
+.btn span{ float:left; height:36px; line-height:36px; margin-right:15px;}
+.btn a{ display:block; height:36px; background:#44b549; padding:0px 32px; border-radius:4px; font-size:14px;}
+.btn a:hover{ background:#2b9f30;}
+.message{ width:328px; height:14px; font-size:14px; text-align:left; padding:10px 0px;}
+.message span{ line-height:14px; color:#f00;}
+
+.footer{ width:1000px; height:auto; margin:0px auto; text-align:center; padding:30px 0px;}
+.footer p{ line-height:30px; font-size:14px; color:#fff;}

@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px;}
+body{ font-size:12pt; font-family:"Microsoft YaHei","Arial"; background:#fff; min-width:300px;}
+li{ list-style:none;}
+img{ border:0px;}
+a{ color:#555; text-decoration:none; outline:none;}
+a:hover{ color:#165aa1; text-decoration:none;}
+a,li{ -webkit-tap-highlight-color:rgba(255,0,0,0);} 
+
+.header{ width:100%; height:98px; background:#165aa1;}
+.header img{ height:68px; padding-top:15px;} 
+
+.wrap{ width:100%;}
+.slider{ width:600px; height:200px; overflow:hidden;}
+.slider img{ display:block; width:100%; height:200px; margin:0px auto;}
+.items{ float:left;}
+.slider-pages,.slider-title{ position: absolute; z-index:9;}
+.slider-title{ width:100%; height:40px; bottom:0px; line-height:40px; color:#fff; text-indent:10px; background:rgba(0,0,0,0.5); z-index:1; font:12pt;}
+.slider-pages{ height:40px; line-height:40px; bottom:0px; right:10px; text-align:right;}
+.slider-pages a{ width:10px; height:10px; display:inline-block; margin:0 5px; overflow:hidden;font-size:0; border-radius:10px; background:#fff;}
+.slider-pages a.active{ background:#f6cf16;}
+
+.icon{ width:100%; height:auto; background:#fff; overflow:hidden;}
+.icon ul{ margin:0px 15px;}
+.icon li{ float:left; width:25%; text-align:center; padding-top:15px; line-height:24px; font-size:11pt;}
+.icon a{ display:block;}
+.icon img{ width:60px; height:60px; border-radius:60px;}
+
+.view{ margin:20px; height:auto; overflow:hidden;}
+.titles{ height:45px; line-height:45px; border-bottom:2px solid #165aa1;}
+.titles h1{ font-size:14pt; color:#165aa1; padding-left:32px;}
+.titles span{ float:right;}
+.titles a,.titles a:hover{ color:#165aa1;}
+.news{ background:url(../images/tb1.png) no-repeat 0px center; background-size:24px 20px;}
+.notice{ background:url(../images/tb2.png) no-repeat 0px center; background-size:24px 20px;}
+.dynamic{ background:url(../images/tb3.png) no-repeat 0px center; background-size:24px 23px;}
+
+.imgs{ width:100%; margin-top:20px;}
+.imgs a{ display:block;}
+.tp{ position:relative; width:100%; height:160px; display:block; text-align:center;}
+.tp img{ width:100%; height:160px;}
+.tp span{ width:100%; position:absolute; background:#000; background:rgba(0,0,0,0.5); color:#fff; bottom:0px; left:0px; padding:8px 0px; font-size:12pt; font-weight:bold;}
+
+.newsList{ padding:20px 0px 8px 0px;}
+.newsList li{ line-height:40px;}
+.newsList strong{ color:#165aa1; padding-right:6px;}
+
+.noticeBox{ margin-top:20px; height:auto; overflow:hidden;}
+.noticeList{ height:72px; margin-bottom:20px;}
+.noticeTime{ float:left; width:72px; height:72px; background:#eee; text-align:center;}
+.noticeTime h1{ font-size:16pt; line-height:36px; background:#165aa1; color:#fff;}
+.noticeTime p{ font-size:11pt; line-height:36px; color:#555;}
+.noticeCont{ width:auto; height:72px; margin:0px 0px 0px 85px;}
+.noticeCont h1{ font-size:12pt; line-height:24px; color:#333;}
+.noticeCont p{ font-size:11pt; line-height:24px; color:#666;}
+
+.dynamicList{ height:auto; overflow:hidden;}
+.dynamicList li{ height:auto; border-bottom:1px solid #ddd; padding:12px 0px 20px 0px;}
+.dynamicList h1{ font-size:12pt; line-height:36px; color:#333;}
+.dynamicList p{ font-size:11pt; line-height:24px; color:#666;}
+.dynamicList p a,.dynamicList p a:hover{ color:#165aa1;}
+
+.footer{ width:100%; height:auto; overflow:hidden; background:#161515; padding:30px 0px; text-align:center;}
+.footer p{ color:#fff; line-height:24px; font-size:11pt;}

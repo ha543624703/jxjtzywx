@@ -1,0 +1,70 @@
+*{ margin:0px; padding:0px;}
+body{ font-size:11pt; font-family:"Microsoft YaHei","Arial"; background:#f8f8f8; min-width:300px;}
+li{ list-style:none;}
+img{ border:0px;}
+a{ color:#333; text-decoration:none; outline:none;}
+a:hover{ color:#0a3d8c; text-decoration:none;}
+a,li{ -webkit-tap-highlight-color:rgba(255,0,0,0);} 
+
+.header{ width:100%; height:45px; line-height:45px; text-align:center; background:#157ee0;}
+.header h1{ font-size:14pt; color:#fff;}
+.wrap{ width:100%;}
+.slider{ width:600px; height:200px; overflow:hidden;}
+.slider img{ display:block; height:200px; margin:0px auto;}
+.items{ float:left;}
+.slider-pages,.slider-title{ position: absolute; z-index:9;}
+.slider-title{ width:100%; height:32px; bottom:0px; line-height:32px; color:#fff; text-indent:10px; background:rgba(0,0,0,0.5); z-index:1; font:12pt;}
+.slider-pages{ height:32px; line-height:32px; bottom:0px; right:10px; text-align:right;}
+.slider-pages a{ width:10px; height:10px; display:inline-block; margin:0 5px; overflow:hidden;font-size:0; border-radius:10px; background:#fff;}
+.slider-pages a.active{ background:#f6cf16;}
+
+.nav{ width:100%; height:auto; overflow:hidden; background:#fff; margin:10px 0px; padding:10px 0px; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.nav li{ float:left; width:25%; line-height:30px; text-align:center; padding:5px 0px;}
+.nav i{ display:inline-block; font-size:28pt; color:#fff; padding:10px;}
+.nav i.color01{ background:#09b2fa; border-radius:15px;}
+.nav i.color02{ background:#ee5a00; border-radius:15px;}
+.nav i.color03{ background:#99cc38; border-radius:15px;}
+.nav i.color04{ background:#00aaa2; border-radius:15px;}
+.nav a,.nav a:hover{ display:block; text-decoration:none;}
+
+.notice{ width:100%; height:auto; overflow:hidden; background:#fff;}
+.navgate{ width:100%; height:48px; line-height:48px; background:#f1f1f1; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.navgate h1{ height:47px; line-height:47px; font-size:12pt; color:#0a3d8c; padding:0px 10px; display:inline-block; border-bottom:2px solid #0a3d8c;}
+.dataList{ width:auto; height:auto; overflow:hidden;}
+.dataList li{ padding:10px; line-height:24px; border-bottom:1px solid #ddd;}
+.dataList strong{ padding-right:5px; font-size:10pt; color:#0a3d8c;}
+.dataList em{ color:#8d8d8d; font-style:normal; padding-left:8px;}
+.mores{ width:auto; height:45px; line-height:45px; text-align:right; padding:0px 10px; border-bottom:1px solid #ddd;}
+.mores a,.mores a:hover{ display:block; font-size:12pt; color:#0a3d8c;}
+
+.box{ width:100%; height:auto; overflow:hidden; background:#fff; margin:10px 0px;}
+.process{ width:100%; height:48px; line-height:48px; background:#f1f1f1; border-top:1px solid #ddd; border-bottom:1px solid #ddd;}
+.hdm{ width:auto; height:48px; font-size:12pt;}
+.hdm li{ float:left; width:33.33%; height:47px; line-height:47px; display:inline-block; text-align:center; cursor:pointer; font-weight:bold;}
+.current{ color:#0a3d8c; font-weight:bold; display:inline-block; border-bottom:2px solid #0a3d8c; background:#fff;}
+.more{ float:right; width:35px; height:28px; text-align:right;}
+.more img{ margin-top:10px;}
+.dis{ display:block;}
+.undis{ display:none;}
+.dataView{ width:100%; height:auto; overflow:hidden;}
+.dataView i{ padding-right:5px; font-size:10pt; color:#0a3d8c; font-style:normal; font-weight:bold;}
+
+.lib{ height:auto; overflow:hidden;}
+.lib dt{ line-height:24px; border-bottom:1px solid #ddd; padding:10px;}
+.lib span{ float:right; line-height:24px;}
+.lib span a{ display:block; background:#27a5f9; padding:0px 10px; color:#fff; border-radius:5px; text-decoration:none;}
+.lib span a:hover{ background:#0a8adf; border-radius:5px; text-decoration:none;}
+.lib strong{ color:#f00;}
+.lib em{ color:#8d8d8d; padding-left:10px; font-style:normal;}
+
+.liok{ height:auto; overflow:hidden;}
+.liok dt{ line-height:24px; border-bottom:1px solid #ddd; padding:10px;}
+.liok span.bj{ float:right; line-height:22px; padding:0px 10px; border:1px solid #ddd; border-radius:12px; color:#aaa;}
+.liok span.lc{ float:right; line-height:24px;}
+.liok span.lc a{ display:block; line-height:22px; padding:0px 10px; border:1px solid #27a5f9; border-radius:12px; color:#27a5f9;}
+.liok span.lc a:hover{ background:#27a5f9; border:1px solid #27a5f9; border-radius:12px; color:#fff;}
+.liok strong{ color:#f00;}
+.liok em{ color:#8d8d8d; padding-left:10px; font-style:normal;}
+
+.footer{ width:100%; height:auto; overflow:hidden; line-height:24px; text-align:center; background:#157ee0;}
+.footer p{ line-height:24px; padding:10px; color:#fff;}

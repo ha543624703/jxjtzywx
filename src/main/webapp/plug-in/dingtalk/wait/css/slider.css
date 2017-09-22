@@ -1,0 +1,75 @@
+*{ margin:0px; padding:0px;}
+body{ font-size:11pt; font-family:"Microsoft YaHei","Arial"; background:#f3f3f3; min-width:300px;}
+li{ list-style:none;}
+img{ border:0px;}
+a{ color:#555; text-decoration:none; outline:none;}
+a:hover{ color:#0a3d8c; text-decoration:none;}
+a,li{ -webkit-tap-highlight-color:rgba(255,0,0,0);} 
+
+.header{ width:100%; height:45px; line-height:45px; text-align:center; background:#157ee0;}
+.header h1{ font-size:12pt; color:#fff;}
+.wrap{ width:100%;}
+.slider{ width:100%; height:160px; overflow:hidden;}
+.slider img{ display:block; width:100%; height:160px; margin:0px auto;}
+.items{ float:left;}
+.slider-pages,.slider-title{ position: absolute; z-index:9;}
+.slider-title{ width:100%; height:32px; bottom:0px; line-height:32px; color:#fff; text-indent:10px; background:rgba(0,0,0,0.5); z-index:1; font:12pt;}
+.slider-pages{ height:32px; line-height:32px; bottom:0px; right:10px; text-align:right;}
+.slider-pages a{ width:10px; height:10px; display:inline-block; margin:0 5px; overflow:hidden;font-size:0; border-radius:10px; background:#fff;}
+.slider-pages a.active{ background:#f6cf16;}
+
+.nav{ width:100%; height:auto; overflow:hidden; background:#fff; margin:15px 0px;}
+.navgate{ width:100%; height:40px; line-height:40px; background:#fff;}
+.navgate span{ float:right; padding-right:15px;}
+.navgate a,.navgate a:hover{color:#0a3d8c; font-size:9pt;}
+.navgate h1{ height:40px; line-height:40px; font-size:12pt; color:#0a3d8c; padding:0px 15px; display:inline-block; border-bottom:1px solid #0a3d8c; font-weight:normal;}
+.nav ul{ padding:5px 0px; border-top:1px solid #eee;}
+.nav li{ float:left; width:25%; line-height:30px; text-align:center; padding:10px 0px;}
+.nav i{ display:inline-block; font-size:22pt; color:#fff; padding:12px;}
+.nav i.color01{ background:#09b2fa; border-radius:36px;}
+.nav i.color02{ background:#ee5a00; border-radius:36px;}
+.nav i.color03{ background:#99cc38; border-radius:36px;}
+.nav i.color04{ background:#00aaa2; border-radius:36px;}
+.nav a,.nav a:hover{ display:block; text-decoration:none;}
+
+.todo{ width:100%; height:auto; overflow:hidden; background:#fff; margin-bottom:15px;}
+.db{ border-top:1px solid #eee; padding:10px 15px; line-height:26px; color:#555;}
+.db h1{ font-size:11pt; color:#0a3d8c; font-weight:normal;}
+.db li a,.db li a:hover{ color:#157ee0; border:1px solid #157ee0; padding:3px 10px; border-radius:36px; font-size:10pt;}
+.db li strong{ color:#f00; padding:0px 3px;}
+.db span{ float:right;}
+
+.box{ width:100%; height:auto; overflow:hidden; background:#fff;}
+.process{ width:100%; height:40px; line-height:40px; border-bottom:1px solid #eee;}
+.hdm{ width:auto; height:48px; font-size:12pt;}
+.hdm li{ float:left; width:auto; height:40px; line-height:40px; display:inline-block; text-align:center; cursor:pointer; padding:0px 15px;}
+.current{ color:#0a3d8c; display:inline-block; border-bottom:1px solid #0a3d8c;}
+.more{ float:right; width:auto; height:40px; display:inline-block; text-align:right; padding-right:15px;}
+.more a,.more a:hover{color:#0a3d8c; font-size:9pt;}
+.dis{ display:block;}
+.undis{ display:none;}
+.dataView{ width:100%; height:auto; overflow:hidden;}
+.newsList{ padding:0px 15px 10px 15px;}
+.newsList li{ line-height:40px;}
+.newsList strong{ padding-right:5px; font-size:10pt; color:#0a3d8c;}
+
+.imgs{ margin:15px;}
+.imgs a{ display:block;}
+.tp{ position:relative; width:100%; height:160px; display:block; text-align:center;}
+.tp img{ width:100%; height:160px;}
+.tp span{ width:100%; position:absolute; background:#000; background:rgba(0,0,0,0.5); color:#fff; bottom:0px; left:0px; padding:8px 0px; font-size:12pt; font-weight:bold;}
+
+.dynamicList{ padding:25px 15px 10px 15px; height:auto; overflow:hidden;}
+.dynamicList li{ height:auto; padding-bottom:15px;}
+.dynamicList h1{ font-size:11pt; line-height:26px; color:#0a3d8c; font-weight:normal;}
+.dynamicList p{ font-size:11pt; line-height:26px; color:#666;}
+.dynamicList p a,.dynamicList p a:hover{ color:#0a3d8c;}
+
+.notice{ width:100%; height:auto; overflow:hidden; background:#fff; margin:15px 0px;}
+.dataList{ width:auto; height:auto;}
+.dataList li{ padding:10px 15px; line-height:24px; border-top:1px solid #eee;}
+.dataList strong{ padding-right:5px; font-size:10pt; color:#0a3d8c;}
+.dataList em{ float:right; color:#0a3d8c; font-style:normal; padding-left:8px; font-family:Georgia, "Times New Roman", Times, serif;}
+
+.footer{ width:100%; height:auto; overflow:hidden; line-height:24px; text-align:center; background:#157ee0;}
+.footer p{ line-height:24px; padding:10px; color:#fff;}
